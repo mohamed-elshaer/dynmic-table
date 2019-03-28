@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html lang="eng">
+    
+  <head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="HTML,CSS,JavaScript">
+    <meta name="author" content="Elshaer">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="CSS/style.css">
+    <script src="js/angular.min.js"></script>
+    <script src="js/controllers.js"></script>
+ 
+  </head>       
+  
+
+  <body ng-app="myApp">
+
+    <section class="table-sec">
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-md-12">
+            <h1>Our Employees</h1>
+          </div>
+        </div>
+       <div class="row"  ng-controller="myController">
+         <div class="col-md-12">
+            <div>
+                <input type="text" ng-model="test" placeholder="search">
+            </div>
+            <table class="table table-bordered table-striped table-hover">
+              <tr class="head">
+                <th>name</th>
+                <th>age</th>
+                <th>salary</th>
+                <th>city</th>
+                <th>id</th>
+            </tr>
+            <tr ng-repeat="x in data | filter : test">
+              <td>{{x.Name}}</td>
+              <td>{{x.age}}</td>
+              <td>{{x.salary}}</td>
+              <td>{{x.city}}</td>
+              <td>{{x.id}}</td>
+           </tr>
+            </table>
+            <form ng-submit="addData()">
+              <div >
+                  <input type="text" name="name" ng-model="Name" placeholder="your name">
+                  <input type="text" name="age" ng-model="age" placeholder="your age">
+                  <input type="text" name="salary" ng-model="salary" placeholder="your salary">
+                  <input type="text" name="city" ng-model="city" placeholder="your City">
+                  <input type="text" name="id" ng-model="id" placeholder="your ID">
+                </div>
+                <div class="pt-15">
+                    <input type="submit" class="btn btn-info btn-lg" ng-click="addData">
+                </div>
+             </form>
+         </div>
+
+       </div>
+      </div>
+    </section>
+
+
+    <!-- all js here -->
+    <script src="js/jquery-1.12.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+<script src="js/data.json"></script>  
+</body>
+   
+</html>

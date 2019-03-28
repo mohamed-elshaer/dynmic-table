@@ -1,0 +1,17 @@
+.table-sec{
+ padding: 60px;
+}
+
+table{
+  margin: 50px auto;
+}
+.head th{
+  background-color: #17a2b8;
+  color: #fff;
+}
+input {
+  padding: 5px;
+}
+.pt-15{
+  padding-top: 15px;
+}
